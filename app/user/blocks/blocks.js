@@ -32,14 +32,16 @@ app.controller('BlocksCtrl', function($scope, $route, dataService, timerService)
                                 var mid = 100 ;
                                 var $b = 0;
                                         if (luck <= mid){
-
-                                                var $r = Math.floor(80 * (luck / mid));
-                                            var $g = 128;
+                                                var $r = Math.floor(100 * (luck / mid));
+                                            	var $g = 130;
+                                        }
+					else if (luck <= 125) {
+						var $r = Math.floor(100 + ((luck - mid) * 6));
+                                            	var $g = 150;
                                         }
                                         else if (luck <= 200) {
-
                                                 $r = 255;
-                                            $g = Math.floor(180 * ((mid - (luck-1) % mid) / mid));
+                                            	$g = Math.floor(180 * ((mid - (luck-1) % mid) / mid));
                                         }
                                         else {
                                                 $r = 255;
